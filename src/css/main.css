@@ -1,6 +1,9 @@
 body {
   background-color: lightblue; }
 
+audio {
+  visibility: hidden; }
+
 .img-btn {
   height: 200px;
   width: 400px;

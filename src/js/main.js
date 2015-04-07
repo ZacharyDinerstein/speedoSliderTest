@@ -3,12 +3,14 @@
 //***** EVENT LISTENERS *****//	
 
 
-$('.gal-1-btn').click(function(){
+$('.gallery1').on('click', function(){
 	openGalery(gallery1);
+    playSlideShowAudio('gallery1-audio');
 });
 
-$('.gal-2-btn').click(function(){
+$('.gallery2').on('click', function(){
 	openGalery(gallery2);
+    playSlideShowAudio('gallery2-audio');
 });
 
 
@@ -70,8 +72,26 @@ function openGalery(gallery){
 	gallery.init();
 }
 
+function playSlideShowAudio(audioTrack){
+    $('#' + audioTrack).get(0).play();
+}
+
+function stopAndResetSlideshowAudio(audioTrack){
+    var currentTrack = $('#' + audioTrack).get(0);
+    currentTrack.pause();
+    currentTrack.currentTime = 0;
+}
 
 
+//***** FUNCTIONAL CODE *****//
+
+gallery1.listen('close', function() {
+    stopAndResetSlideshowAudio('gallery1-audio');
+});
+
+gallery2.listen('close', function() {
+    stopAndResetSlideshowAudio('gallery2-audio');
+});
 
 
 
