@@ -1,0 +1,13 @@
+body {
+	background-color: lightblue;
+}
+
+.img-btn {
+	height: 200px;
+	width: 400px;
+	cursor: pointer;
+	&:hover {
+		opacity: .6;
+	}
+}
+
